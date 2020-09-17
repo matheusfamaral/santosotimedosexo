@@ -18,7 +18,7 @@ for tweet in tweepy.Cursor(api.search, search).items(numero):
             print("nome do usuario: @" + tweet.user.screen_name)
             api.update_status(status="@" + tweet.user.screen_name + " o time do sexo", in_reply_to_status_id=tweet.id)
             print("tweet enviado corretamente")
-            time.sleep(interval)
+            time.sleep(30)
     except tweepy.TweepError as e:
         print(e.reason)
     except StopIteration:
