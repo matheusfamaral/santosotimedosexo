@@ -1,1 +1,1 @@
-web: python botzin.py
+web: python bootzin.py
