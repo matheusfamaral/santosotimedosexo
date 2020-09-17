@@ -7,7 +7,7 @@ verify_ssl = true
 [packages]
 
 Flask = "*"
-tweepy = "3.8.0"
+tweepy = "*"
 
 [requires]
 
