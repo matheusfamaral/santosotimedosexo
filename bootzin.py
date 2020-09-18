@@ -1,13 +1,14 @@
 import tweepy
 import time
 
-auth = tweepy.OAuthHandler('UQ4Shh8YMEugP7Ea6GQAPhvU8',
-                           'gtUAEz8Fv8LajqlVMS6ZIsJRyru0RMvEpMscAhGqFa4R2vATxu')
-auth.set_access_token('1306002914125717507-heJfTaupAoEjySX0oiayL8vtAbYoEG',
-                      'KrGHa6biUaB1iQzjEBmfcVrUQFkeFB2ZC63GSRnqpIUGZ')
+consumer_key = 'UQ4Shh8YMEugP7Ea6GQAPhvU8'
+consumer_secret = 'gtUAEz8Fv8LajqlVMS6ZIsJRyru0RMvEpMscAhGqFa4R2vATxu'
+key =  '1306002914125717507-heJfTaupAoEjySX0oiayL8vtAbYoEG'
+secret = 'KrGHa6biUaB1iQzjEBmfcVrUQFkeFB2ZC63GSRnqpIUGZ'
 
-
-api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(key, secret)
+api = tweepy.API(auth)
 
 search = 'Santos'
 numero = 10000000
