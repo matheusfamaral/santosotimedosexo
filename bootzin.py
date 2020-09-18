@@ -10,7 +10,7 @@ auth.set_access_token('1306002914125717507-heJfTaupAoEjySX0oiayL8vtAbYoEG',
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 search = 'Santos'
-numero = 1000
+numero = 10000000
 
 for tweet in tweepy.Cursor(api.search, search).items(numero):
     try:
