@@ -11,16 +11,13 @@ api = tweepy.API(auth)
 search = 'Santos'
 numero = 10000000
 
-for tweet in tweepy.Cursor(api.search, search).items(numero):
-    try:
+def reply():
+  for tweet in tweepy.Cursor(api.search, search).items(numero):
         if((tweet.text)=='Santos'):
             print("nome do usuario: @" + tweet.user.screen_name)
             api.update_status(status="@" + tweet.user.screen_name + " o time do sexo", in_reply_to_status_id=tweet.id)
             print("tweet enviado corretamente")
-            time.sleep(30)
-    except tweepy.TweepError as e:
-        print(e.reason)
-        time.sleep(30)
-    except StopIteration:
-        time.sleep(30)
-        break
+            
+while True:
+  reply()
+  time.sleep(30)
