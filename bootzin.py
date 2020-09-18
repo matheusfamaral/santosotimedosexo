@@ -20,8 +20,6 @@ for tweet in tweepy.Cursor(api.search, search).items(numero):
             api.update_status(status="@" + tweet.user.screen_name + " o time do sexo", in_reply_to_status_id=tweet.id)
             print("tweet enviado corretamente")
             time.sleep(30)
-    except tweepy.RateLimitError:
-        time.sleep(5*60)
     except tweepy.TweepError as e:
         print(e.reason)
         time.sleep(30)
