@@ -21,5 +21,7 @@ for tweet in tweepy.Cursor(api.search, search).items(numero):
             time.sleep(30)
     except tweepy.TweepError as e:
         print(e.reason)
+        time.sleep(30)
     except StopIteration:
+        time.sleep(30)
         break
