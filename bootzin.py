@@ -6,7 +6,7 @@ auth = tweepy.OAuthHandler('UQ4Shh8YMEugP7Ea6GQAPhvU8',
 auth.set_access_token('1306002914125717507-heJfTaupAoEjySX0oiayL8vtAbYoEG',
                       'KrGHa6biUaB1iQzjEBmfcVrUQFkeFB2ZC63GSRnqpIUGZ')
 
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 search = 'Santos'
 numero = 10000000
