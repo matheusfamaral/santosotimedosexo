@@ -13,11 +13,14 @@ numero = 450
 
 def reply():
   for tweet in tweepy.Cursor(api.search, search).items(numero):
+    try:
         if((tweet.text)=='Santos'):
             print("nome do usuario: @" + tweet.user.screen_name)
             api.update_status(status="@" + tweet.user.screen_name + " o time do sexo", in_reply_to_status_id=tweet.id)
-            print("tweet enviado corretamente")
-            
+            print("tweet enviado corretamente")    
+    except tweepy.TweepError as e:
+        print(e.reason)
+        
 while True:
   reply()
   time.sleep(30)
