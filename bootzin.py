@@ -9,7 +9,7 @@ auth.set_access_token('1306002914125717507-heJfTaupAoEjySX0oiayL8vtAbYoEG',
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 search = 'Santos'
-numero = 10
+numero = 100
 
 def reply():
   for tweet in tweepy.Cursor(api.search, search).items(numero):
@@ -26,4 +26,4 @@ def reply():
         
 while True:
   reply()
-  time.sleep(20)
+  time.sleep(60)
