@@ -19,7 +19,10 @@ def reply():
             api.update_status(status="@" + tweet.user.screen_name + " o time do sexo", in_reply_to_status_id=tweet.id)
             print("tweet enviado corretamente")    
     except tweepy.TweepError as e:
-        print(e.reason)
+         if error.api_code == 187:
+            print('duplicate message')
+         else:
+            print(e.reason)
         
 while True:
   reply()
