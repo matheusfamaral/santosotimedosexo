@@ -26,4 +26,4 @@ def reply():
         
 while True:
   reply()
-  time.sleep(60*5)
+  time.sleep(60*3)
